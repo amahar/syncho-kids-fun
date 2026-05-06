@@ -104,15 +104,15 @@ function Hero() {
         </div>
 
         {/* Hero illustration card */}
-        <div className="relative flex items-center justify-center">
-          <div className="absolute -top-4 -left-4 rotate-[-8deg] rounded-2xl bg-mint ink-border pop-sm px-3 py-2 text-sm font-bold animate-float" style={{ ["--r" as string]: "-8deg" } as React.CSSProperties}>
-            ⚡ Build real projects
+        <div className="relative flex items-center justify-center px-2 sm:px-10">
+          <div className="absolute top-2 left-4 sm:left-2 rotate-[-8deg] rounded-2xl bg-mint ink-border pop-sm px-3 py-2 text-sm font-bold animate-float z-10" style={{ ["--r" as string]: "-8deg" } as React.CSSProperties}>
+            ⚡ Real projects
           </div>
-          <div className="absolute -bottom-2 -right-2 rotate-[6deg] rounded-2xl bg-grape text-grape-foreground ink-border pop-sm px-3 py-2 text-sm font-bold animate-float" style={{ animationDelay: "-2s", ["--r" as string]: "6deg" } as React.CSSProperties}>
-            🤖 AI as your sidekick
+          <div className="absolute bottom-4 right-4 sm:right-2 rotate-[6deg] rounded-2xl bg-grape text-grape-foreground ink-border pop-sm px-3 py-2 text-sm font-bold animate-float z-10" style={{ animationDelay: "-2s", ["--r" as string]: "6deg" } as React.CSSProperties}>
+            🤖 AI sidekick
           </div>
-          <div className="absolute top-1/2 -right-6 rotate-[10deg] rounded-2xl bg-sun ink-border pop-sm px-3 py-2 text-sm font-bold animate-float" style={{ animationDelay: "-3.5s", ["--r" as string]: "10deg" } as React.CSSProperties}>
-            🏆 Earn a certificate
+          <div className="absolute top-1/2 right-2 sm:right-0 rotate-[10deg] rounded-2xl bg-sun ink-border pop-sm px-3 py-2 text-sm font-bold animate-float z-10" style={{ animationDelay: "-3.5s", ["--r" as string]: "10deg" } as React.CSSProperties}>
+            🏆 Certificate
           </div>
 
           <div className="relative w-full max-w-lg rounded-[2rem] bg-card ink-border pop p-6">
