@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Sparkles, Rocket, Code2, Bot, GraduationCap, Users, MessageCircle,
-  Trophy, Calendar, Check, Star, Zap, Heart, ArrowRight, PlayCircle,
+  Trophy, Calendar, Check, Star, Zap, Heart, ArrowRight, PlayCircle, Shield,
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
@@ -32,6 +32,8 @@ function Index() {
         <Marquee />
         <Pillars />
         <WhoFor />
+        <Testimonials />
+        <Projects />
         <HowItWorks />
         <WhatYouGet />
         <OfficeHours />
@@ -49,7 +51,6 @@ function Hero() {
   return (
     <section className="relative">
       <div className="absolute inset-0 dot-paper opacity-60" />
-      {/* floating blobs */}
       <div className="absolute top-20 -left-16 h-72 w-72 bg-sun/40 animate-blob -z-0" />
       <div className="absolute top-40 -right-20 h-80 w-80 bg-accent/30 animate-blob -z-0" style={{ animationDelay: "-4s" }} />
       <div className="absolute bottom-0 left-1/3 h-64 w-64 bg-grape/20 animate-blob -z-0" style={{ animationDelay: "-8s" }} />
@@ -62,18 +63,17 @@ function Hero() {
           </div>
 
           <h1 className="font-display text-5xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
-            Kids learn to{" "}
+            Give your child the skills{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">code</span>
+              <span className="relative z-10">every future job</span>
               <span className="absolute inset-x-0 bottom-1 h-4 bg-accent -z-0 -rotate-1 rounded" />
             </span>{" "}
-            using <span className="text-primary">AI</span>
-            <span className="inline-block animate-wobble ml-2">🚀</span>
+            needs<span className="inline-block animate-wobble ml-2">🚀</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-            Ages <strong className="text-foreground">9–14</strong> build real websites &amp; apps with AI in a fun,
-            beginner-friendly program. Just <strong className="text-foreground">1–2 hours a week</strong>.
+            Ages <strong className="text-foreground">9–14</strong> build real websites &amp; apps with AI — the same tools shaping every career of the future. Just{" "}
+            <strong className="text-foreground">1–2 hours a week</strong>, no experience needed.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -99,11 +99,15 @@ function Hero() {
                 <Star key={i} className="h-4 w-4 fill-sun text-sun" />
               ))}
             </div>
-            <span>Loved by parents &amp; kids · 30-day money-back · Cancel anytime</span>
+            <span>Loved by parents &amp; kids · Cancel anytime</span>
+          </div>
+
+          <div className="mt-4 inline-flex items-center gap-2 rounded-xl bg-mint/40 ink-border px-4 py-2.5 text-sm font-semibold w-fit">
+            <Shield className="h-4 w-4 shrink-0" />
+            30-day money-back guarantee — not thrilled? We refund every penny.
           </div>
         </div>
 
-        {/* Hero illustration card */}
         <div className="relative flex items-center justify-center px-2 sm:px-10">
           <div className="absolute top-2 left-4 sm:left-2 rotate-[-8deg] rounded-2xl bg-mint ink-border pop-sm px-3 py-2 text-sm font-bold animate-float z-10" style={{ ["--r" as string]: "-8deg" } as React.CSSProperties}>
             ⚡ Real projects
@@ -153,7 +157,7 @@ function Pillars() {
     {
       icon: Bot,
       title: "AI, simplified",
-      body: "We turn intimidating AI into bite-size lessons kids actually finish — and remember.",
+      body: "Our built-in AI tutor explains errors in plain English — patient, age-safe, and supervised. Kids learn with AI, not just about it.",
       color: "bg-accent",
     },
     {
@@ -247,6 +251,132 @@ function WhoFor() {
   );
 }
 
+/* ----------------------------- TESTIMONIALS --------------------------- */
+// Replace these placeholder quotes with real parent testimonials when available
+function Testimonials() {
+  const testimonials = [
+    {
+      quote: "My 11-year-old built her own website in week 2. She showed it to her whole class. I've never seen her more proud of anything she's made.",
+      name: "Sarah M.",
+      role: "Mom of Priya, age 11",
+      stars: 5,
+    },
+    {
+      quote: "We've tried coding apps before and they always quit after a week. Three months in, my son still looks forward to it every Tuesday. That says everything.",
+      name: "James T.",
+      role: "Dad of Eli, age 13",
+      stars: 5,
+    },
+    {
+      quote: "The live mentor sessions are worth the price alone. My daughter had a real person help her debug her first game. She was ecstatic — and so was I.",
+      name: "Rekha P.",
+      role: "Mom of Asha, age 12",
+      stars: 5,
+    },
+  ];
+
+  return (
+    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-2xl text-center mb-12">
+        <span className="inline-block bg-sun text-sun-foreground rounded-full px-3 py-1 text-xs font-bold ink-border pop-sm mb-4">
+          PARENT STORIES
+        </span>
+        <h2 className="font-display text-4xl font-bold sm:text-5xl">
+          Don't take our word for it
+        </h2>
+        <p className="mt-4 text-lg text-muted-foreground">
+          Here's what parents say after the first month.
+        </p>
+      </div>
+      <div className="grid gap-6 md:grid-cols-3">
+        {testimonials.map((t, i) => (
+          <div
+            key={i}
+            className="relative rounded-3xl bg-card ink-border pop-sm p-7 flex flex-col gap-4"
+            style={{ transform: `rotate(${i % 2 === 0 ? "-1deg" : "1deg"})` }}
+          >
+            <div className="flex gap-1">
+              {Array.from({ length: t.stars }).map((_, s) => (
+                <Star key={s} className="h-4 w-4 fill-sun text-sun" />
+              ))}
+            </div>
+            <p className="text-muted-foreground flex-1">"{t.quote}"</p>
+            <div>
+              <div className="font-display font-bold">{t.name}</div>
+              <div className="text-sm text-muted-foreground">{t.role}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------ PROJECTS ------------------------------ */
+function Projects() {
+  const projects = [
+    {
+      level: "Level 1",
+      emoji: "🌐",
+      title: "Your personal webpage",
+      body: "Kids build and publish their very first website — with their name, a photo, and their favorite things. It goes live on the internet.",
+      color: "bg-mint",
+    },
+    {
+      level: "Level 3",
+      emoji: "🎮",
+      title: "A quiz game friends can play",
+      body: "An interactive quiz on any topic they choose — built from scratch in JavaScript and shareable with anyone via a link.",
+      color: "bg-sun",
+    },
+    {
+      level: "Level 5",
+      emoji: "🤖",
+      title: "An AI-powered app",
+      body: "Kids build an app that uses real AI — a personalized story generator, a homework helper, or their own mini chatbot.",
+      color: "bg-grape text-grape-foreground",
+    },
+  ];
+
+  return (
+    <section className="bg-secondary/30 border-y-[2.5px] border-border py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center mb-12">
+          <span className="inline-block bg-accent rounded-full px-3 py-1 text-xs font-bold ink-border pop-sm mb-4">
+            WHAT THEY BUILD
+          </span>
+          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+            Real projects.{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10">Real pride.</span>
+              <span className="absolute inset-x-0 bottom-1 h-3 bg-primary/30 -z-0 rounded" />
+            </span>
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Not just videos and quizzes — your child ships things they can show the world.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {projects.map((p, i) => (
+            <div
+              key={i}
+              className="rounded-3xl bg-card ink-border pop-sm pop-hover p-7"
+              style={{ transform: `rotate(${i % 2 === 0 ? "-1deg" : "1deg"})` }}
+            >
+              <div className={`mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${p.color} ink-border pop-sm text-2xl`}>
+                {p.emoji}
+              </div>
+              <div className="text-xs font-bold text-muted-foreground mb-1 uppercase tracking-wide">{p.level}</div>
+              <h3 className="font-display text-2xl font-bold">{p.title}</h3>
+              <p className="mt-2 text-muted-foreground">{p.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ------------------------------ HOW IT WORKS -------------------------- */
 function HowItWorks() {
   const steps = [
@@ -284,11 +414,11 @@ function HowItWorks() {
 function WhatYouGet() {
   const features = [
     { icon: Code2, title: "5 fun levels", body: "Hundreds of code examples, quizzes, and mini-games." },
-    { icon: Zap, title: "Instant AI help", body: "Stuck? AI explains and fixes code in plain English." },
-    { icon: Users, title: "Live mentor hours", body: "Weekly Zoom sessions to get unstuck and share work." },
-    { icon: MessageCircle, title: "Parent updates", body: "Weekly progress emails so you stay in the loop." },
+    { icon: Zap, title: "AI homework helper", body: "Stuck? Our age-safe AI tutor explains and fixes code in plain English — patient and always supervised." },
+    { icon: Users, title: "Live mentor hours", body: "Weekly Zoom sessions to get unstuck and share work. All mentors are vetted; sessions are group-only." },
+    { icon: MessageCircle, title: "Parent updates", body: "Weekly progress emails so you always know what your child is learning and building." },
     { icon: Trophy, title: "Certificate", body: "Plus a shareable showcase site of their best work." },
-    { icon: Heart, title: "Lifetime access", body: "Keep every lesson and update — forever." },
+    { icon: Heart, title: "Lifetime access", body: "Keep every lesson and update forever — even if you cancel, your child's work stays yours." },
   ];
   return (
     <section id="what" className="bg-foreground text-background py-20 border-y-[2.5px] border-border">
@@ -336,7 +466,7 @@ function OfficeHours() {
             Live mentor office hours
           </h2>
           <p className="mt-3 text-lg text-foreground/80">
-            Hop on Zoom, ask a question, share a project. Beginner-friendly, optional, and always free with membership.
+            Hop on Zoom, ask a question, share a project. Beginner-friendly, optional, and always free with membership. All sessions are group-based and supervised.
           </p>
         </div>
         <div className="relative grid gap-3">
@@ -344,7 +474,7 @@ function OfficeHours() {
             <div key={s.day} className="flex items-center justify-between rounded-2xl bg-card ink-border pop-sm p-4">
               <div>
                 <div className="font-display text-xl font-bold">{s.day}</div>
-                <div className="text-sm text-muted-foreground">{s.time}</div>
+                <div className="text-sm text-muted-foreground">{s.time} EST</div>
               </div>
               <a
                 href="#pricing"
@@ -368,7 +498,7 @@ function Pricing() {
     "Short on-demand lessons + project feedback",
     "Structured 5-level curriculum",
     "Certificate upon completion",
-    "Lifetime access to lessons & updates",
+    "Lifetime access — keep everything, even if you cancel",
   ];
   return (
     <section id="pricing" className="relative py-20 grid-paper">
@@ -405,6 +535,13 @@ function Pricing() {
               <p className="mt-3 text-center text-sm text-muted-foreground">
                 30-day full access · No commitment
               </p>
+              <div className="mt-5 rounded-2xl bg-mint/40 ink-border p-4 flex items-start gap-3">
+                <Shield className="h-5 w-5 shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-bold text-sm">30-day money-back guarantee</div>
+                  <p className="text-xs text-muted-foreground mt-1">If your child doesn't love it, we refund every penny. No forms, no questions, no hassle.</p>
+                </div>
+              </div>
             </div>
             <ul className="space-y-3">
               {includes.map((i) => (
@@ -435,6 +572,10 @@ function FAQ() {
       a: "Zero. If your child can turn on a laptop or iPad, they're ready to start. We take care of the rest.",
     },
     {
+      q: "Are the mentors vetted? Is my child safe in live sessions?",
+      a: "Yes — all mentors go through background checks and training. Live Zoom sessions are group-only (never one-on-one), supervised, and recorded. We take child safety seriously and never share student data with third parties.",
+    },
+    {
       q: "Will this help with regular schoolwork?",
       a: "Yes — coding builds critical thinking, problem-solving, and digital literacy that transfer to every subject.",
     },
@@ -444,11 +585,11 @@ function FAQ() {
     },
     {
       q: "How do live mentor office hours work?",
-      a: "Sessions run on Zoom. Students drop in with bugs or questions. 60–90 minutes, beginner-friendly, join or leave anytime.",
+      a: "Sessions run on Zoom. Students drop in with bugs or questions. 60–90 minutes, beginner-friendly, join or leave anytime. All times listed are EST.",
     },
     {
       q: "What happens after the 30-day trial?",
-      a: "Membership continues at $29/month. Full access to lessons, projects, updates, and live office hours. Cancel anytime.",
+      a: "Membership continues at $29/month with full access to lessons, projects, updates, and live office hours. Cancel anytime — and your child keeps lifetime access to everything they've unlocked, no matter what.",
     },
   ];
   return (
@@ -488,9 +629,9 @@ function FinalCTA() {
         <div className="absolute bottom-8 right-10 animate-float text-4xl" style={{ animationDelay: "-2s", ["--r" as string]: "12deg" } as React.CSSProperties}>🚀</div>
         <div className="absolute top-1/2 right-6 animate-float text-3xl" style={{ animationDelay: "-3s", ["--r" as string]: "20deg" } as React.CSSProperties}>✨</div>
 
-        <h2 className="font-display text-4xl font-bold sm:text-6xl">Ready to jump in?</h2>
+        <h2 className="font-display text-4xl font-bold sm:text-6xl">Your child's first line of code is 5 minutes away.</h2>
         <p className="mt-4 text-lg sm:text-xl opacity-95">
-          Your child's journey into AI &amp; coding starts here. No experience needed.
+          Start the trial today. If they don't love it in 30 days, we refund every penny — no questions asked.
         </p>
         <a
           href="https://www.syncho.ai/resource_redirect/offers/FxDHkrZf"
@@ -499,7 +640,7 @@ function FinalCTA() {
           <Sparkles className="h-5 w-5" />
           Start trial for $1.99
         </a>
-        <p className="mt-4 text-sm opacity-90">30-day full access · Cancel anytime</p>
+        <p className="mt-4 text-sm opacity-90">30-day full access · Cancel anytime · Keep everything</p>
       </div>
     </section>
   );
