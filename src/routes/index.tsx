@@ -526,7 +526,7 @@ function Pricing() {
                 Then <strong className="text-foreground">$29/month</strong>. Cancel anytime — no questions asked.
               </p>
               <a
-                href="https://www.syncho.ai/resource_redirect/offers/FxDHkrZf"
+                href="https://learn.syncho.ai/offers/FxDHkrZf/checkout"
                 className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-4 text-lg font-bold ink-border pop pop-hover"
               >
                 <Rocket className="h-5 w-5" />
@@ -634,7 +634,7 @@ function FinalCTA() {
           Start the trial today. If they don't love it in 30 days, we refund every penny — no questions asked.
         </p>
         <a
-          href="https://www.syncho.ai/resource_redirect/offers/FxDHkrZf"
+          href="https://learn.syncho.ai/offers/FxDHkrZf/checkout"
           className="mt-8 inline-flex items-center gap-2 rounded-full bg-card text-card-foreground px-8 py-5 text-lg font-bold ink-border pop pop-hover"
         >
           <Sparkles className="h-5 w-5" />
