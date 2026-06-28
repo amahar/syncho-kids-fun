@@ -6,7 +6,7 @@ export function Header() {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b-[2.5px] border-border">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary ink-border pop-sm transition-transform group-hover:rotate-[-6deg]">
+          <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-primary ink-border pop-sm transition-transform group-hover:rotate-[-6deg]">
             <span className="font-display text-xl font-bold text-primary-foreground">S</span>
           </div>
           <span className="font-display text-xl font-bold tracking-tight">
