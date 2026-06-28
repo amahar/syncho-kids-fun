@@ -10,7 +10,7 @@ export function Header() {
             <span className="font-display text-xl font-bold text-primary-foreground">S</span>
           </div>
           <span className="font-display text-xl font-bold tracking-tight">
-            Syncho<span className="text-primary">.ai</span>
+            Syncho<span className="text-primary"> Academy</span>
           </span>
         </Link>
 
