@@ -11,6 +11,7 @@ import heroKids from "@/assets/hero-kids.png";
 const KAJABI_CHECKOUT_URL = "#checkout";
 
 export const Route = createFileRoute("/sales")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Get Started — Syncho AI Academy · Kids Coding & AI for Ages 9–14" },
