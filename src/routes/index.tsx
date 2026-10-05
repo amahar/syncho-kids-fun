@@ -8,6 +8,7 @@ import { Footer } from "@/components/site/Footer";
 import heroKids from "@/assets/hero-kids.png";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Syncho AI Academy — Kids Learn to Code with AI (Ages 9–14)" },
