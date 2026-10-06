@@ -5,24 +5,20 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { FounderIntro, BeforeAfter, AgeGroupedOfficeHours } from "@/components/site/AcademySections";
+import { projects as approvedProjects, faqs as approvedFaqs, featureCopy, pillarCopy, pricingIncludes } from "@/lib/academy-content";
 import heroKids from "@/assets/hero-kids.png";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
   head: () => ({
-    meta: [
-      { title: "Syncho AI Academy — Kids Learn to Code with AI (Ages 9–14)" },
-      {
-        name: "description",
-        content:
-          "A fun, beginner-friendly online program where kids 9–14 build real websites and apps using AI. Live mentors, hands-on projects, parent updates. Start for $1.99.",
-      },
-    ],
+    meta: [{"title": "Syncho Academy — Kids & Teens Learn to Code with AI (Ages 9–18)"}, {"name": "description", "content": "A fun, beginner-friendly online program where kids and teens 9–18 build real websites and apps — and publish them live on the internet. Live mentors, hands-on projects, parent updates. Start for $1.99."}, {"property": "og:title", "content": "Syncho Academy — Kids & Teens Learn to Code with AI (Ages 9–18)"}, {"property": "og:description", "content": "Ages 9–18 build real websites & apps, and publish them live. Live mentors, hands-on projects, parent progress reports. Start for $1.99."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}, {"property": "og:url", "content": "https://syncho-kids-fun.lovable.app/"}],
+    links: [{ rel: "canonical", href: "https://syncho-kids-fun.lovable.app/" }],
   }),
   component: Index,
 });
 
-const TRUST = ["Ages 9–14", "No experience needed", "1–2 hrs / week", "100% Online", "Live mentors"];
+const TRUST = ["Ages 9–18", "No experience needed", "1–2 hrs / week", "100% Online", "Live mentors, grouped by age"];
 
 function Index() {
   return (
@@ -34,10 +30,12 @@ function Index() {
         <Pillars />
         <WhoFor />
         <Testimonials />
+        <FounderIntro />
         <Projects />
+        <BeforeAfter />
         <HowItWorks />
         <WhatYouGet />
-        <OfficeHours />
+        <AgeGroupedOfficeHours />
         <Pricing />
         <FAQ />
         <FinalCTA />
@@ -73,7 +71,7 @@ function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-            Ages <strong className="text-foreground">9–14</strong> build real websites &amp; apps with AI — the same tools shaping every career of the future. Just{" "}
+            Ages <strong className="text-foreground">9–18</strong> build real websites &amp; apps — and publish them live on the internet — using the same tools shaping every career of the future. Just{" "}
             <strong className="text-foreground">1–2 hours a week</strong>, no experience needed.
           </p>
 
@@ -114,7 +112,7 @@ function Hero() {
             ⚡ Real projects
           </div>
           <div className="absolute bottom-4 right-4 sm:right-2 rotate-[6deg] rounded-2xl bg-grape text-grape-foreground ink-border pop-sm px-3 py-2 text-sm font-bold animate-float z-10" style={{ animationDelay: "-2s", ["--r" as string]: "6deg" } as React.CSSProperties}>
-            🤖 AI sidekick
+            🌐 Published live
           </div>
           <div className="absolute top-1/2 right-2 sm:right-0 rotate-[10deg] rounded-2xl bg-sun ink-border pop-sm px-3 py-2 text-sm font-bold animate-float z-10" style={{ animationDelay: "-3.5s", ["--r" as string]: "10deg" } as React.CSSProperties}>
             🏆 Certificate
@@ -154,26 +152,7 @@ function Marquee() {
 
 /* ------------------------------- PILLARS ------------------------------ */
 function Pillars() {
-  const pillars = [
-    {
-      icon: Bot,
-      title: "AI, simplified",
-      body: "Our built-in AI tutor explains errors in plain English — patient, age-safe, and supervised. Kids learn with AI, not just about it.",
-      color: "bg-accent",
-    },
-    {
-      icon: Rocket,
-      title: "Build the future",
-      body: "Kids ship real websites & games — not just watch tutorials. Portfolio from day one.",
-      color: "bg-sun",
-    },
-    {
-      icon: GraduationCap,
-      title: "Beginner-friendly",
-      body: "Zero coding experience needed. If they can use a laptop, they can start today.",
-      color: "bg-mint",
-    },
-  ];
+  const pillars = pillarCopy.map((p, i) => ({ ...p, icon: [Code2, Bot, Rocket][i], color: ["bg-mint", "bg-accent", "bg-sun"][i] }));
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
@@ -182,14 +161,14 @@ function Pillars() {
           WHY SYNCHO
         </span>
         <h2 className="font-display text-4xl font-bold sm:text-5xl">
-          Coding &amp; AI skills,{" "}
+          Coding skills,{" "}
           <span className="relative inline-block">
-            <span className="relative z-10">designed for kids</span>
+            <span className="relative z-10">built the right way</span>
             <span className="absolute inset-x-0 bottom-1 h-3 bg-primary/30 -z-0 rounded" />
           </span>
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          Kids don't just learn <em>about</em> AI — they create with it.
+          Kids and teens don't just watch tutorials — they build, ship, and publish real things, one solid skill at a time.
         </p>
       </div>
 
@@ -215,7 +194,7 @@ function Pillars() {
 /* ------------------------------ WHO FOR ------------------------------- */
 function WhoFor() {
   const items = [
-    { emoji: "🧠", text: "Curious kids 9–14 who love building things" },
+    { emoji: "🧠", text: "Curious kids and teens 9–18 who love building things" },
     { emoji: "🌱", text: "Total beginners — no coding experience needed" },
     { emoji: "👨‍👩‍👧", text: "Parents who want structured, low-stress learning" },
     { emoji: "🛠️", text: "Families who want real projects, not just videos" },
@@ -228,7 +207,7 @@ function WhoFor() {
             WHO IT'S FOR
           </span>
           <h2 className="font-display text-4xl font-bold sm:text-5xl">
-            Made for kids who ask <span className="text-primary">"how does this work?"</span>
+            Made for kids and teens who ask <span className="text-primary">"how does this work?"</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             If your child loves Minecraft, Roblox, or asking endless questions about how things work — they'll feel right at home here.
@@ -253,7 +232,7 @@ function WhoFor() {
 }
 
 /* ----------------------------- TESTIMONIALS --------------------------- */
-// Replace these placeholder quotes with real parent testimonials when available
+// Parent stories approved in the supplied website copy.
 function Testimonials() {
   const testimonials = [
     {
@@ -315,29 +294,7 @@ function Testimonials() {
 
 /* ------------------------------ PROJECTS ------------------------------ */
 function Projects() {
-  const projects = [
-    {
-      level: "Level 1",
-      emoji: "🌐",
-      title: "Your personal webpage",
-      body: "Kids build and publish their very first website — with their name, a photo, and their favorite things. It goes live on the internet.",
-      color: "bg-mint",
-    },
-    {
-      level: "Level 3",
-      emoji: "🎮",
-      title: "A quiz game friends can play",
-      body: "An interactive quiz on any topic they choose — built from scratch in JavaScript and shareable with anyone via a link.",
-      color: "bg-sun",
-    },
-    {
-      level: "Level 5",
-      emoji: "🤖",
-      title: "An AI-powered app",
-      body: "Kids build an app that uses real AI — a personalized story generator, a homework helper, or their own mini chatbot.",
-      color: "bg-grape text-grape-foreground",
-    },
-  ];
+  const projects = approvedProjects;
 
   return (
     <section className="bg-secondary/30 border-y-[2.5px] border-border py-20">
@@ -349,14 +306,15 @@ function Projects() {
           <h2 className="font-display text-4xl font-bold sm:text-5xl">
             Real projects.{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">Real pride.</span>
+              <span className="relative z-10">Real pride. Six levels, six real builds.</span>
               <span className="absolute inset-x-0 bottom-1 h-3 bg-primary/30 -z-0 rounded" />
             </span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Not just videos and quizzes — your child ships things they can show the world.
+            Not just videos and quizzes — your child ships things they can show the world, and by the end, publishes their work live.
           </p>
         </div>
+        <p className="mb-8 text-center text-muted-foreground">No blocks. No drag-and-drop. Real HTML, CSS, and JavaScript — the same languages professional developers use every day.</p>
         <div className="grid gap-6 md:grid-cols-3">
           {projects.map((p, i) => (
             <div
@@ -385,8 +343,8 @@ function HowItWorks() {
     { n: "2", title: "Learn", body: "Bite-size lessons + parent progress emails.", color: "bg-accent" },
     { n: "3", title: "Quiz", body: "Quick checks lock in the concepts.", color: "bg-sun" },
     { n: "4", title: "Build", body: "Real websites, mini-games, and showcase projects.", color: "bg-mint" },
-    { n: "5", title: "Get help", body: "Drop into weekly LIVE office hours with mentors.", color: "bg-grape text-grape-foreground" },
-    { n: "6", title: "Earn it", body: "Finish strong with a certificate to show off.", color: "bg-secondary" },
+    { n: "5", title: "Get help", body: "Drop into weekly LIVE office hours with mentors, grouped by age.", color: "bg-grape text-grape-foreground" },
+    { n: "6", title: "Earn it", body: "Finish strong with a certificate and a live, published project to show off.", color: "bg-secondary" },
   ];
   return (
     <section id="how" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
@@ -413,14 +371,7 @@ function HowItWorks() {
 
 /* ----------------------------- WHAT YOU GET --------------------------- */
 function WhatYouGet() {
-  const features = [
-    { icon: Code2, title: "5 fun levels", body: "Hundreds of code examples, quizzes, and mini-games." },
-    { icon: Zap, title: "AI homework helper", body: "Stuck? Our age-safe AI tutor explains and fixes code in plain English — patient and always supervised." },
-    { icon: Users, title: "Live mentor hours", body: "Weekly Zoom sessions to get unstuck and share work. All mentors are vetted; sessions are group-only." },
-    { icon: MessageCircle, title: "Parent updates", body: "Weekly progress emails so you always know what your child is learning and building." },
-    { icon: Trophy, title: "Certificate", body: "Plus a shareable showcase site of their best work." },
-    { icon: Heart, title: "Lifetime access", body: "Keep every lesson and update forever — even if you cancel, your child's work stays yours." },
-  ];
+  const features = featureCopy.map((f, i) => ({ ...f, icon: [Code2, Zap, Users, MessageCircle, Trophy, Heart][i] }));
   return (
     <section id="what" className="bg-foreground text-background py-20 border-y-[2.5px] border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -449,58 +400,9 @@ function WhatYouGet() {
 }
 
 /* ----------------------------- OFFICE HOURS --------------------------- */
-function OfficeHours() {
-  const sessions = [
-    { day: "Tuesday", time: "5:30 – 7:00 PM" },
-    { day: "Wednesday", time: "5:30 – 7:00 PM" },
-    { day: "Saturday", time: "12:00 – 12:45 PM" },
-  ];
-  return (
-    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-      <div className="rounded-[2rem] bg-accent/40 ink-border pop p-8 sm:p-12 grid gap-10 lg:grid-cols-2 items-center relative overflow-hidden">
-        <div className="absolute -top-10 -right-10 h-48 w-48 bg-sun rounded-full ink-border opacity-80" />
-        <div className="relative">
-          <div className="inline-flex items-center gap-2 bg-card ink-border pop-sm rounded-full px-3 py-1 text-xs font-bold mb-4">
-            <Calendar className="h-4 w-4" /> THIS WEEK · EST
-          </div>
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">
-            Live mentor office hours
-          </h2>
-          <p className="mt-3 text-lg text-foreground/80">
-            Hop on Zoom, ask a question, share a project. Beginner-friendly, optional, and always free with membership. All sessions are group-based and supervised.
-          </p>
-        </div>
-        <div className="relative grid gap-3">
-          {sessions.map((s) => (
-            <div key={s.day} className="flex items-center justify-between rounded-2xl bg-card ink-border pop-sm p-4">
-              <div>
-                <div className="font-display text-xl font-bold">{s.day}</div>
-                <div className="text-sm text-muted-foreground">{s.time} EST</div>
-              </div>
-              <a
-                href="#pricing"
-                className="inline-flex items-center gap-1 rounded-full bg-primary text-primary-foreground px-4 py-2 text-sm font-bold ink-border pop-sm pop-hover"
-              >
-                Join <ArrowRight className="h-4 w-4" />
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ------------------------------- PRICING ------------------------------ */
 function Pricing() {
-  const includes = [
-    "Personalized learning platform",
-    "Live weekly mentor office hours",
-    "Short on-demand lessons + project feedback",
-    "Structured 5-level curriculum",
-    "Certificate upon completion",
-    "Lifetime access — keep everything, even if you cancel",
-  ];
+  const includes = pricingIncludes;
   return (
     <section id="pricing" className="relative py-20 grid-paper">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -563,36 +465,7 @@ function Pricing() {
 
 /* --------------------------------- FAQ -------------------------------- */
 function FAQ() {
-  const faqs = [
-    {
-      q: "What is Syncho AI Academy?",
-      a: "An online coding program where kids 9–14 learn real JavaScript, HTML, and CSS to build websites and beginner-friendly web apps — using AI as a co-pilot, just like modern developers do.",
-    },
-    {
-      q: "Does my child need prior coding experience?",
-      a: "Zero. If your child can turn on a laptop or iPad, they're ready to start. We take care of the rest.",
-    },
-    {
-      q: "Are the mentors vetted? Is my child safe in live sessions?",
-      a: "Yes — all mentors go through background checks and training. Live Zoom sessions are group-only (never one-on-one), supervised, and recorded. We take child safety seriously and never share student data with third parties.",
-    },
-    {
-      q: "Will this help with regular schoolwork?",
-      a: "Yes — coding builds critical thinking, problem-solving, and digital literacy that transfer to every subject.",
-    },
-    {
-      q: "What equipment do we need?",
-      a: "A computer or laptop with a reliable internet connection. Most activities are browser-based.",
-    },
-    {
-      q: "How do live mentor office hours work?",
-      a: "Sessions run on Zoom. Students drop in with bugs or questions. 60–90 minutes, beginner-friendly, join or leave anytime. All times listed are EST.",
-    },
-    {
-      q: "What happens after the 30-day trial?",
-      a: "Membership continues at $29/month with full access to lessons, projects, updates, and live office hours. Cancel anytime — and your child keeps lifetime access to everything they've unlocked, no matter what.",
-    },
-  ];
+  const faqs = approvedFaqs;
   return (
     <section id="faq" className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
       <div className="text-center mb-10">
