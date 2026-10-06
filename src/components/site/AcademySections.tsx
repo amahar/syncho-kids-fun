@@ -9,10 +9,27 @@ export function FounderIntro() {
         <span className="mb-4 inline-block rounded-full bg-sun px-3 py-1 text-xs font-bold ink-border pop-sm">MEET THE FOUNDER</span>
         <h2 className="mb-10 font-display text-4xl font-bold sm:text-5xl">Why I built Syncho Academy</h2>
         <div className="grid items-start gap-10 lg:grid-cols-2">
-          <div role="img" aria-label="Founder video placeholder, awaiting Mahar’s introduction video" className="flex aspect-video flex-col items-center justify-center gap-3 rounded-lg border-[2.5px] border-dashed border-border bg-card text-center">
-            <PlayCircle className="h-14 w-14 text-primary" aria-hidden="true" />
-            <span className="font-display text-2xl font-bold">Meet Mahar</span>
-            <span className="text-sm text-muted-foreground">Founder video coming soon · 60–90 seconds</span>
+          <div role="img" aria-label="Founder video placeholder, awaiting Mahar’s introduction video" className="group relative">
+            {/* Doodle accents peeking from behind the frame */}
+            <div className="absolute -left-5 -top-5 z-20 h-12 w-12 rounded-full bg-accent ink-border" aria-hidden="true" />
+            <div className="absolute -bottom-6 -right-4 z-20 h-9 w-16 rotate-12 rounded-lg bg-primary ink-border" aria-hidden="true" />
+            <div className="absolute -right-3 top-10 z-20 h-7 w-7 -rotate-12 rounded-md bg-sun ink-border" aria-hidden="true" />
+
+            <div className="relative flex aspect-video flex-col items-center justify-center gap-3 overflow-hidden rounded-3xl bg-card text-center ink-border pop">
+              {/* Inner dashed frame */}
+              <div className="pointer-events-none absolute inset-4 rounded-2xl border-[2.5px] border-dashed border-primary/25" aria-hidden="true" />
+              {/* Viewfinder corners */}
+              <div className="pointer-events-none absolute left-6 top-6 h-6 w-6 rounded-tl-lg border-l-4 border-t-4 border-accent" aria-hidden="true" />
+              <div className="pointer-events-none absolute right-6 top-6 h-6 w-6 rounded-tr-lg border-r-4 border-t-4 border-sun" aria-hidden="true" />
+              <div className="pointer-events-none absolute bottom-6 left-6 h-6 w-6 rounded-bl-lg border-b-4 border-l-4 border-sun" aria-hidden="true" />
+              <div className="pointer-events-none absolute bottom-6 right-6 h-6 w-6 rounded-br-lg border-b-4 border-r-4 border-accent" aria-hidden="true" />
+              {/* Brand gradient strip */}
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-accent via-sun to-primary opacity-70" aria-hidden="true" />
+
+              <PlayCircle className="relative z-10 h-14 w-14 text-primary transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
+              <span className="relative z-10 font-display text-2xl font-bold">Meet Mahar</span>
+              <span className="relative z-10 text-sm text-muted-foreground">Founder video coming soon · 60–90 seconds</span>
+            </div>
           </div>
           <div className="space-y-5 text-lg text-muted-foreground">
             <h3 className="font-display text-2xl font-bold text-foreground">Hi, I'm Mahar — the founder of Syncho Academy.</h3>
