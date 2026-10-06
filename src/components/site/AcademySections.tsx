@@ -49,7 +49,7 @@ export function FounderIntro() {
             {/* Doodle accents peeking from behind the frame */}
             <SparkDoodle className="absolute -left-7 -top-7 z-20 h-14 w-14 -rotate-6 text-accent" />
             <PlusDoodle className="absolute -right-5 top-12 z-20 h-9 w-9 rotate-12 text-sun" />
-            <ZigzagDoodle className="absolute -bottom-5 -right-7 z-20 h-8 w-24 rotate-6 text-primary" />
+            <ZigzagDoodle className="absolute -bottom-7 -right-6 z-20 h-9 w-28 rotate-6 text-primary" />
 
             <div className="relative flex aspect-video flex-col items-center justify-center gap-3 overflow-hidden rounded-3xl bg-card text-center ink-border pop">
               {/* Inner dashed frame */}
@@ -60,7 +60,7 @@ export function FounderIntro() {
               <CropMark className="pointer-events-none absolute bottom-7 left-7 h-4 w-4 text-primary/45" />
               <CropMark className="pointer-events-none absolute bottom-7 right-7 h-4 w-4 text-primary/45" />
 
-              <span className="relative z-10 grid h-16 w-16 place-items-center rounded-2xl bg-primary ink-border pop-sm transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
+              <span className="relative z-10 grid h-16 w-16 place-items-center rounded-lg bg-primary ink-border pop-sm transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
                 <svg viewBox="0 0 24 24" className="h-7 w-7 translate-x-0.5 fill-card" aria-hidden="true">
                   <polygon points="7,4 20,12 7,20" />
                 </svg>
