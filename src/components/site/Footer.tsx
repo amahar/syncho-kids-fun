@@ -7,9 +7,9 @@ export function Footer() {
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary">
               <span className="font-display text-lg font-bold text-primary-foreground">S</span>
             </div>
-            <span className="font-display text-lg font-bold">Syncho.ai Academy</span>
+            <span className="font-display text-lg font-bold">Syncho Academy</span>
           </div>
-          <p className="text-sm opacity-70">© {new Date().getFullYear()} Syncho AI Academy · Made with ❤️ for young creators</p>
+          <p className="text-sm opacity-70">© {new Date().getFullYear()} Syncho Academy · Made with ❤️ for young creators</p>
         </div>
       </div>
     </footer>
