@@ -2,6 +2,42 @@ import { ArrowRight, Calendar, FileCode2, Globe, Image, PlayCircle } from "lucid
 import { Button } from "@/components/ui/button";
 import { officeGroups } from "@/lib/academy-content";
 
+const INK = "var(--color-border)";
+
+function SparkDoodle({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" stroke={INK} strokeWidth="1.7" strokeLinejoin="round" aria-hidden="true">
+      <polygon points="23,12 15.9,9.8 17.5,2.5 12,7.5 6.5,2.5 8.1,9.8 1,12 8.1,14.2 6.5,21.5 12,16.5 17.5,21.5 15.9,14.2" />
+    </svg>
+  );
+}
+
+function PlusDoodle({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" stroke={INK} strokeWidth="1.8" strokeLinejoin="round" aria-hidden="true">
+      <polygon points="9,2 15,2 15,9 22,9 22,15 15,15 15,22 9,22 9,15 2,15 2,9 9,9" />
+    </svg>
+  );
+}
+
+function ZigzagDoodle({ className }: { className?: string }) {
+  const d = "M3 14 L9 6 L15 14 L21 6 L27 14 L33 6 L39 14 L45 6";
+  return (
+    <svg viewBox="0 0 48 20" className={className} fill="none" aria-hidden="true">
+      <path d={d} stroke={INK} strokeWidth="8" strokeLinejoin="round" strokeLinecap="round" />
+      <path d={d} stroke="currentColor" strokeWidth="4" strokeLinejoin="round" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function CropMark({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="4" aria-hidden="true">
+      <path d="M12 3v18M3 12h18" />
+    </svg>
+  );
+}
+
 export function FounderIntro() {
   return (
     <section id="founder" className="border-y-[2.5px] border-border bg-mint/30 py-20">
@@ -11,22 +47,24 @@ export function FounderIntro() {
         <div className="grid items-start gap-10 lg:grid-cols-2">
           <div role="img" aria-label="Founder video placeholder, awaiting Mahar’s introduction video" className="group relative">
             {/* Doodle accents peeking from behind the frame */}
-            <div className="absolute -left-5 -top-5 z-20 h-12 w-12 rounded-full bg-accent ink-border" aria-hidden="true" />
-            <div className="absolute -bottom-6 -right-4 z-20 h-9 w-16 rotate-12 rounded-lg bg-primary ink-border" aria-hidden="true" />
-            <div className="absolute -right-3 top-10 z-20 h-7 w-7 -rotate-12 rounded-md bg-sun ink-border" aria-hidden="true" />
+            <SparkDoodle className="absolute -left-7 -top-7 z-20 h-14 w-14 -rotate-6 text-accent" />
+            <PlusDoodle className="absolute -right-5 top-12 z-20 h-9 w-9 rotate-12 text-sun" />
+            <ZigzagDoodle className="absolute -bottom-5 -right-7 z-20 h-8 w-24 rotate-6 text-primary" />
 
             <div className="relative flex aspect-video flex-col items-center justify-center gap-3 overflow-hidden rounded-3xl bg-card text-center ink-border pop">
               {/* Inner dashed frame */}
               <div className="pointer-events-none absolute inset-4 rounded-2xl border-[2.5px] border-dashed border-primary/25" aria-hidden="true" />
-              {/* Viewfinder corners */}
-              <div className="pointer-events-none absolute left-6 top-6 h-6 w-6 rounded-tl-lg border-l-4 border-t-4 border-accent" aria-hidden="true" />
-              <div className="pointer-events-none absolute right-6 top-6 h-6 w-6 rounded-tr-lg border-r-4 border-t-4 border-sun" aria-hidden="true" />
-              <div className="pointer-events-none absolute bottom-6 left-6 h-6 w-6 rounded-bl-lg border-b-4 border-l-4 border-sun" aria-hidden="true" />
-              <div className="pointer-events-none absolute bottom-6 right-6 h-6 w-6 rounded-br-lg border-b-4 border-r-4 border-accent" aria-hidden="true" />
-              {/* Brand gradient strip */}
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-accent via-sun to-primary opacity-70" aria-hidden="true" />
+              {/* Corner crop marks */}
+              <CropMark className="pointer-events-none absolute left-7 top-7 h-4 w-4 text-primary/45" />
+              <CropMark className="pointer-events-none absolute right-7 top-7 h-4 w-4 text-primary/45" />
+              <CropMark className="pointer-events-none absolute bottom-7 left-7 h-4 w-4 text-primary/45" />
+              <CropMark className="pointer-events-none absolute bottom-7 right-7 h-4 w-4 text-primary/45" />
 
-              <PlayCircle className="relative z-10 h-14 w-14 text-primary transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
+              <span className="relative z-10 grid h-16 w-16 place-items-center rounded-2xl bg-primary ink-border pop-sm transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
+                <svg viewBox="0 0 24 24" className="h-7 w-7 translate-x-0.5 fill-card" aria-hidden="true">
+                  <polygon points="7,4 20,12 7,20" />
+                </svg>
+              </span>
               <span className="relative z-10 font-display text-2xl font-bold">Meet Mahar</span>
               <span className="relative z-10 text-sm text-muted-foreground">Founder video coming soon · 60–90 seconds</span>
             </div>
