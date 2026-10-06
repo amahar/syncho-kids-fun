@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, FileCode2, Globe, Image, PlayCircle } from "lucide-react";
+import { ArrowRight, Calendar, FileCode2, Globe, Image } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { officeGroups } from "@/lib/academy-content";
 
