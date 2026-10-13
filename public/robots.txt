@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://syncho-kids-fun.lovable.app/sitemap.xml
+Sitemap: https://syncho.ai/sitemap.xml

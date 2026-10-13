@@ -67,7 +67,7 @@ export const faqs = [
   },
   {
     "q": "Are the mentors vetted? Is my child safe in live sessions?",
-    "a": "Yes — all mentors go through background checks and training. Live Zoom sessions are group-only (never one-on-one), supervised, and recorded. We take child safety seriously and never share student data with third parties."
+    "a": "Yes — all mentors go through background checks and training. Live Zoom Office Hours are group-only and supervised. We take child safety seriously and never share student data with third parties."
   },
   {
     "q": "When does my child use AI?",
