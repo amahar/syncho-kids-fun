@@ -12,10 +12,10 @@ import heroKids from "@/assets/hero-kids.png";
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
   head: () => ({
-    meta: [{"title": "Syncho Academy | Kids & Teens Learn to Code with AI (Ages 9–18)"}, 
-          {"name": "description", "content": "A fun, beginner-friendly online program where kids and teens 9–18 build real websites and apps — and publish them live on the internet. Live mentors, hands-on projects, parent updates. Start for $1.99."},
-          {"property": "og:title", "content": "Syncho Academy | Kids & Teens Learn to Code with AI (Ages 9–18)"}, 
-          {"property": "og:description", "content": "Ages 9–18 build real websites & apps, and publish them live. Live mentors, hands-on projects, parent progress reports. Start for $1.99."},
+    meta: [{"title": "Syncho Academy | Kids & Teens Learn to Code with AI (Ages 9–17)"}, 
+          {"name": "description", "content": "A fun, beginner-friendly online program where kids and teens 9–17 build real websites and apps — and publish them live on the internet. Live mentors, hands-on projects, parent updates. Start for $1.99."},
+          {"property": "og:title", "content": "Syncho Academy | Kids & Teens Learn to Code with AI (Ages 9–17)"}, 
+          {"property": "og:description", "content": "Ages 9–17 build real websites & apps, and publish them live. Live mentors, hands-on projects, parent progress reports. Start for $1.99."},
           {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"},
           {"property": "og:url", "content": "https://syncho.ai/"}],
     links: [{ rel: "canonical", href: "https://syncho.ai/" }],
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const TRUST = ["Ages 9–18", "No experience needed", "1–2 hrs / week", "100% Online", "Live mentors, grouped by age"];
+const TRUST = ["Ages 9–17", "No experience needed", "1–2 hrs / week", "100% Online", "Live mentors, grouped by age"];
 
 function Index() {
   return (
@@ -76,7 +76,7 @@ function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-            Ages <strong className="text-foreground">9–18</strong> build real websites &amp; apps — and publish them live on the internet — using the same tools shaping every career of the future. Just{" "}
+            Ages <strong className="text-foreground">9–17</strong> build real websites &amp; apps — and publish them live on the internet — using the same tools shaping every career of the future. Just{" "}
             <strong className="text-foreground">1–2 hours a week</strong>, no experience needed.
           </p>
 
@@ -199,7 +199,7 @@ function Pillars() {
 /* ------------------------------ WHO FOR ------------------------------- */
 function WhoFor() {
   const items = [
-    { emoji: "🧠", text: "Curious kids and teens 9–18 who love building things" },
+    { emoji: "🧠", text: "Curious kids and teens 9–17 who love building things" },
     { emoji: "🌱", text: "Total beginners — no coding experience needed" },
     { emoji: "👨‍👩‍👧", text: "Parents who want structured, low-stress learning" },
     { emoji: "🛠️", text: "Families who want real projects, not just videos" },

@@ -3,8 +3,8 @@ import { describe, expect, test } from "bun:test";
 import { officeGroups, program, projects } from "./academy-content";
 
 describe("approved program rules", () => {
-  test("serves ages 9–18", () => {
-    expect([program.minAge, program.maxAge]).toEqual([9, 18]);
+  test("serves ages 9–17", () => {
+    expect([program.minAge, program.maxAge]).toEqual([9, 17]);
   });
   test("includes six curriculum levels", () => {
     expect(program.levelCount).toBe(6);
@@ -26,8 +26,8 @@ describe("approved program rules", () => {
       { day: "Saturday", time: "12:00–12:45 PM" },
     ] });
   });
-  test("senior ages 13–18 meet Monday, Thursday and Friday evenings", () => {
-    expect(officeGroups[1]).toEqual({ name: "Senior", minAge: 13, maxAge: 18, sessions: [
+  test("senior ages 13–17 meet Monday, Thursday and Friday evenings", () => {
+    expect(officeGroups[1]).toEqual({ name: "Senior", minAge: 13, maxAge: 17, sessions: [
       { day: "Monday", time: "5:30–7:00 PM" },
       { day: "Thursday", time: "5:30–7:00 PM" },
       { day: "Friday", time: "5:30–7:00 PM" },

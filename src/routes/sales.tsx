@@ -15,7 +15,7 @@ const KAJABI_CHECKOUT_URL = "#checkout";
 export const Route = createFileRoute("/sales")({
   staticData: { sitemap: true },
   head: () => ({
-    meta: [{"title": "Start Your Trial — Syncho Academy · Coding for Ages 9–18"}, {"name": "description", "content": "A fun, beginner-friendly online program where kids and teens 9–18 build real websites and apps — and publish them live on the internet. Live mentors, hands-on projects, parent updates. Start for $1.99."}, {"property": "og:title", "content": "Start Your Trial — Syncho Academy · Coding for Ages 9–18"}, {"property": "og:description", "content": "Ages 9–18 build real websites & apps, and publish them live. Live mentors, hands-on projects, parent progress reports. Start for $1.99."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}, {"property": "og:url", "content": "https://syncho-kids-fun.lovable.app/sales"}],
+    meta: [{"title": "Start Your Trial — Syncho Academy · Coding for Ages 9–17"}, {"name": "description", "content": "A fun, beginner-friendly online program where kids and teens 9–17 build real websites and apps — and publish them live on the internet. Live mentors, hands-on projects, parent updates. Start for $1.99."}, {"property": "og:title", "content": "Start Your Trial — Syncho Academy · Coding for Ages 9–17"}, {"property": "og:description", "content": "Ages 9–17 build real websites & apps, and publish them live. Live mentors, hands-on projects, parent progress reports. Start for $1.99."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}, {"property": "og:url", "content": "https://syncho-kids-fun.lovable.app/sales"}],
     links: [{ rel: "canonical", href: "https://syncho-kids-fun.lovable.app/sales" }],
   }),
   component: SalesPage,
@@ -71,7 +71,7 @@ function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-            Syncho Academy turns curious kids and teens <strong className="text-foreground">9–18</strong> into confident makers — writing real code and publishing their projects live. Just <strong className="text-foreground">1–2 hours a week</strong>, no experience needed.
+            Syncho Academy turns curious kids and teens <strong className="text-foreground">9–17</strong> into confident makers — writing real code and publishing their projects live. Just <strong className="text-foreground">1–2 hours a week</strong>, no experience needed.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -169,7 +169,7 @@ function ValueProps() {
 /* ------------------------------ WHO FOR ------------------------------- */
 function WhoFor() {
   const yes = [
-    "Kids and teens ages 9–18 who love building, tinkering, or asking questions",
+    "Kids and teens ages 9–17 who love building, tinkering, or asking questions",
     "Total beginners — zero coding experience required",
     "Minecraft / Roblox kids ready for the next step",
     "Busy families that want 1–2 focused hours a week",
@@ -187,7 +187,7 @@ function WhoFor() {
             IS THIS RIGHT FOR YOUR CHILD?
           </span>
           <h2 className="font-display text-4xl font-bold sm:text-5xl">
-            Made for curious kids and teens <span className="text-primary">9–18</span>
+            Made for curious kids and teens <span className="text-primary">9–17</span>
           </h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2">

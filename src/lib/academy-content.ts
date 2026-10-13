@@ -1,7 +1,7 @@
 // Approved program facts shared by the public pages.
 export const program = {
   "minAge": 9,
-  "maxAge": 18,
+  "maxAge": 17,
   "levelCount": 6,
   "aiStartLevel": 5,
   "trialDays": 30,
@@ -55,7 +55,7 @@ export const projects = [
 export const faqs = [
   {
     "q": "What is Syncho Academy?",
-    "a": "An online coding program where kids and teens 9–18 learn real JavaScript, HTML, and CSS to build websites and beginner-friendly web apps — and publish their own work live on the internet."
+    "a": "An online coding program where kids and teens 9–17 learn real JavaScript, HTML, and CSS to build websites and beginner-friendly web apps — and publish their own work live on the internet."
   },
   {
     "q": "Does my child need prior coding experience?",
@@ -153,7 +153,7 @@ export const officeGroups = [
   {
     "name": "Senior",
     "minAge": 13,
-    "maxAge": 18,
+    "maxAge": 17,
     "sessions": [
       {
         "day": "Monday",
