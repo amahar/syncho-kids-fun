@@ -12,8 +12,13 @@ import heroKids from "@/assets/hero-kids.png";
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
   head: () => ({
-    meta: [{"title": "Syncho Academy — Kids & Teens Learn to Code with AI (Ages 9–18)"}, {"name": "description", "content": "A fun, beginner-friendly online program where kids and teens 9–18 build real websites and apps — and publish them live on the internet. Live mentors, hands-on projects, parent updates. Start for $1.99."}, {"property": "og:title", "content": "Syncho Academy — Kids & Teens Learn to Code with AI (Ages 9–18)"}, {"property": "og:description", "content": "Ages 9–18 build real websites & apps, and publish them live. Live mentors, hands-on projects, parent progress reports. Start for $1.99."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}, {"property": "og:url", "content": "https://syncho-kids-fun.lovable.app/"}],
-    links: [{ rel: "canonical", href: "https://syncho-kids-fun.lovable.app/" }],
+    meta: [{"title": "Syncho Academy | Kids & Teens Learn to Code with AI (Ages 9–18)"}, 
+          {"name": "description", "content": "A fun, beginner-friendly online program where kids and teens 9–18 build real websites and apps — and publish them live on the internet. Live mentors, hands-on projects, parent updates. Start for $1.99."},
+          {"property": "og:title", "content": "Syncho Academy | Kids & Teens Learn to Code with AI (Ages 9–18)"}, 
+          {"property": "og:description", "content": "Ages 9–18 build real websites & apps, and publish them live. Live mentors, hands-on projects, parent progress reports. Start for $1.99."},
+          {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"},
+          {"property": "og:url", "content": "https://syncho.ai/"}],
+    links: [{ rel: "canonical", href: "https://syncho.ai/" }],
   }),
   component: Index,
 });
