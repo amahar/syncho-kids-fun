@@ -1,6 +1,7 @@
-import { ArrowRight, Calendar, FileCode2, Globe, Image } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { officeGroups } from "@/lib/academy-content";
+import { WatchItBuild } from "@/components/site/WatchItBuild";
 
 const INK = "var(--color-border)";
 
@@ -88,22 +89,7 @@ export function BeforeAfter() {
         <span className="mb-4 inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold ink-border pop-sm">BEFORE / AFTER</span>
         <h2 className="font-display text-4xl font-bold sm:text-5xl">From blank file to live website</h2>
       </div>
-      <div className="grid overflow-hidden rounded-lg ink-border md:grid-cols-2">
-        <div className="bg-foreground p-6 text-background">
-          <div className="mb-5 flex items-center gap-2 border-b border-background/20 pb-4 font-semibold"><FileCode2 className="h-5 w-5" /> Before · index.html</div>
-          <div role="img" aria-label="Blank editor screenshot placeholder" className="flex aspect-video flex-col items-center justify-center gap-3 border border-dashed border-background/40">
-            <Image className="h-10 w-10 opacity-60" aria-hidden="true" />
-            <span className="text-sm">Blank editor image coming soon</span>
-          </div>
-        </div>
-        <div className="bg-mint/40 p-6 text-foreground">
-          <div className="mb-5 flex items-center gap-2 border-b border-border/20 pb-4 font-semibold"><Globe className="h-5 w-5" /> After · Level 6, published live</div>
-          <div role="img" aria-label="Authentic published student game screenshot placeholder" className="flex aspect-video flex-col items-center justify-center gap-3 border border-dashed border-border/40 bg-card">
-            <Image className="h-10 w-10 text-primary" aria-hidden="true" />
-            <span className="text-sm">Student project image coming soon</span>
-          </div>
-        </div>
-      </div>
+      <WatchItBuild />
       <p className="mt-6 text-center text-lg text-muted-foreground">That blank screen is where every student starts. This is where they finish.</p>
     </section>
   );

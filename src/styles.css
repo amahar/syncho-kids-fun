@@ -162,3 +162,21 @@
 .animate-wobble { animation: wobble 3s ease-in-out infinite; transform-origin: center; }
 .animate-blob { animation: blob 12s ease-in-out infinite; }
 .animate-marquee { animation: marquee 30s linear infinite; }
+
+/* "Watch it build" rocket */
+@keyframes wib-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8%); }
+}
+@keyframes wib-launch {
+  0%   { transform: translateY(0) rotate(0deg); }
+  15%  { transform: translateY(4%) rotate(-2deg); }
+  100% { transform: translateY(-400%) rotate(0deg); }
+}
+@keyframes wib-return {
+  from { transform: translateY(300%); }
+  to   { transform: translateY(0); }
+}
+.wib-float { animation: wib-float 2s ease-in-out infinite; }
+.wib-launch { animation: wib-launch 1.7s cubic-bezier(.5,0,.75,0) forwards; }
+.wib-return { animation: wib-return 0.9s cubic-bezier(.2,.8,.2,1), wib-float 2s ease-in-out 0.9s infinite; }
