@@ -67,7 +67,7 @@ function Hero() {
         <div className="flex flex-col justify-center">
           <div className="inline-flex w-fit items-center gap-2 rounded-full bg-sun ink-border pop-sm px-4 py-1.5 mb-6 animate-wobble" style={{ ["--r" as string]: "0deg" }}>
             <Sparkles className="h-4 w-4" />
-            <span className="text-sm font-bold">New cohorts open now · $1.99 trial</span>
+            <span className="text-sm font-bold">Start anytime · 30-day trial for $1.99</span>
           </div>
 
           <h1 className="font-display text-5xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
@@ -90,7 +90,7 @@ function Hero() {
               className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-4 text-base font-bold ink-border pop pop-hover"
             >
               <Rocket className="h-5 w-5" />
-              Start trial — $1.99
+              Start for $1.99
             </a>
             <a
               href="#how"
@@ -110,10 +110,10 @@ function Hero() {
             <span>Loved by parents &amp; kids · Cancel anytime</span>
           </div>
 
-          <div className="mt-4 inline-flex items-center gap-2 rounded-xl bg-mint/40 ink-border px-4 py-2.5 text-sm font-semibold w-fit">
+          {/* <div className="mt-4 inline-flex items-center gap-2 rounded-xl bg-mint/40 ink-border px-4 py-2.5 text-sm font-semibold w-fit">
             <Shield className="h-4 w-4 shrink-0" />
             30-day money-back guarantee — not thrilled? We refund every penny.
-          </div>
+          </div> */}
         </div>
 
         <div className="relative flex items-center justify-center px-2 sm:px-10">
@@ -447,13 +447,13 @@ function Pricing() {
               <p className="mt-3 text-center text-sm text-muted-foreground">
                 30-day full access · No commitment
               </p>
-              <div className="mt-5 rounded-2xl bg-mint/40 ink-border p-4 flex items-start gap-3">
+              {/* <div className="mt-5 rounded-2xl bg-mint/40 ink-border p-4 flex items-start gap-3">
                 <Shield className="h-5 w-5 shrink-0 mt-0.5" />
                 <div>
                   <div className="font-bold text-sm">30-day money-back guarantee</div>
                   <p className="text-xs text-muted-foreground mt-1">If your child doesn't love it, we refund every penny. No forms, no questions, no hassle.</p>
                 </div>
-              </div>
+              </div> */}
             </div>
             <ul className="space-y-3">
               {includes.map((i) => (

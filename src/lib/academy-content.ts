@@ -12,35 +12,35 @@ export const projects = [
   {
     "level": "Level 1",
     "emoji": "🌐",
-    "title": "My All About Me Page",
+    "title": "About Me Page",
     "body": "Their very first website — name, photo, favorite things — built by hand in HTML.",
     "color": "bg-mint"
   },
   {
     "level": "Level 2",
     "emoji": "🛍️",
-    "title": "My Dream Shop",
+    "title": "Dream Shop",
     "body": "A fully styled online shop with custom colors, layout, and design — real CSS, no templates.",
     "color": "bg-sun"
   },
   {
     "level": "Level 3",
     "emoji": "🎮",
-    "title": "My Quiz Game",
+    "title": "Quiz Game",
     "body": "An interactive quiz on any topic they choose, built from scratch in JavaScript.",
     "color": "bg-secondary"
   },
   {
     "level": "Level 4",
     "emoji": "✂️",
-    "title": "My Rock, Paper, Scissors Game",
+    "title": "Rock, Paper, Scissors Game",
     "body": "A playable game with score-tracking logic — where everything from Levels 1–4 comes together.",
     "color": "bg-primary text-primary-foreground"
   },
   {
     "level": "Level 5",
     "emoji": "🗳️",
-    "title": "My Fan Voting Page",
+    "title": "Fan Voting Page",
     "body": "A real multi-page website with working forms — debugged with the help of an AI coding assistant, used safely and deliberately for the first time.",
     "color": "bg-grape text-grape-foreground"
   },
