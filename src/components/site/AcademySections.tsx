@@ -2,6 +2,7 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { officeGroups } from "@/lib/academy-content";
 import { WatchItBuild } from "@/components/site/WatchItBuild";
+import founderPhoto from "@/assets/founder-mahar.jpg";
 
 const INK = "var(--color-border)";
 
@@ -31,14 +32,6 @@ function ZigzagDoodle({ className }: { className?: string }) {
   );
 }
 
-function CropMark({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="4" aria-hidden="true">
-      <path d="M12 3v18M3 12h18" />
-    </svg>
-  );
-}
-
 export function FounderIntro() {
   return (
     <section id="founder" className="border-y-[2.5px] border-border bg-mint/30 py-20">
@@ -46,35 +39,29 @@ export function FounderIntro() {
         <span className="mb-4 inline-block rounded-full bg-sun px-3 py-1 text-xs font-bold ink-border pop-sm">MEET THE FOUNDER</span>
         <h2 className="mb-10 font-display text-4xl font-bold sm:text-5xl">Why I built Syncho Academy</h2>
         <div className="grid items-start gap-10 lg:grid-cols-2">
-          <div role="img" aria-label="Founder video placeholder, awaiting Mahar’s introduction video" className="group relative">
+          <div className="group relative mx-auto w-full max-w-md">
             {/* Doodle accents peeking from behind the frame */}
             <SparkDoodle className="absolute -left-7 -top-7 z-20 h-14 w-14 -rotate-6 text-accent" />
             <PlusDoodle className="absolute -right-5 top-12 z-20 h-9 w-9 rotate-12 text-sun" />
             <ZigzagDoodle className="absolute -bottom-7 -right-6 z-20 h-9 w-28 rotate-6 text-primary" />
 
-            <div className="relative flex aspect-video flex-col items-center justify-center gap-3 overflow-hidden rounded-3xl bg-card text-center ink-border pop">
-              {/* Inner dashed frame */}
-              <div className="pointer-events-none absolute inset-4 rounded-2xl border-[2.5px] border-dashed border-primary/25" aria-hidden="true" />
-              {/* Corner crop marks */}
-              <CropMark className="pointer-events-none absolute left-7 top-7 h-4 w-4 text-primary/45" />
-              <CropMark className="pointer-events-none absolute right-7 top-7 h-4 w-4 text-primary/45" />
-              <CropMark className="pointer-events-none absolute bottom-7 left-7 h-4 w-4 text-primary/45" />
-              <CropMark className="pointer-events-none absolute bottom-7 right-7 h-4 w-4 text-primary/45" />
-
-              <span className="relative z-10 grid h-16 w-16 place-items-center rounded-lg bg-primary ink-border pop-sm transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
-                <svg viewBox="0 0 24 24" className="h-7 w-7 translate-x-0.5 fill-card" aria-hidden="true">
-                  <polygon points="7,4 20,12 7,20" />
-                </svg>
-              </span>
-              <span className="relative z-10 font-display text-2xl font-bold">Meet Mahar</span>
-              <span className="relative z-10 text-sm text-muted-foreground">Founder video coming soon · 60–90 seconds</span>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-card ink-border pop">
+              <img
+                src={founderPhoto}
+                alt="Mahar, founder of Syncho Academy, standing on a stone terrace overlooking a hillside city"
+                width={900}
+                height={1200}
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover object-[center_45%] transition-transform duration-500 group-hover:scale-[1.03]"
+              />
             </div>
           </div>
           <div className="space-y-5 text-lg text-muted-foreground">
-            <h3 className="font-display text-2xl font-bold text-foreground">Hi, I'm Mahar — the founder of Syncho Academy.</h3>
+            <h3 className="font-display text-2xl font-bold text-foreground">Hi, I'm Asim (Aw-sim) — the founder of Syncho Academy.</h3>
             <p>I started Syncho Academy because I kept seeing the same thing: kids finishing "coding" apps that never taught them to actually write code. Drag-and-drop blocks, gamified badges, nothing they could point to and say "I built that." I wanted something different — a place where a 9-year-old (or a 17-year-old) writes real HTML, CSS, and JavaScript by hand, gets stuck, gets unstuck by an actual human on a Zoom call, and finishes with something real: a website that's actually live on the internet.</p>
             <p>That's still what every lesson here is built around. Not to make coding look easy — to make it real, and to make kids proud of what they made.</p>
-            <p className="font-display font-semibold text-foreground">— Mahar, Founder</p>
+            <p className="font-display font-semibold text-foreground">— Asim Mahar, Founder</p>
           </div>
         </div>
       </div>

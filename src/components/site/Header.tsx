@@ -23,7 +23,7 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <a
-            href="https://www.syncho.ai/login"
+            href="https://learn.syncho.ai/login"
             className="hidden sm:inline-flex text-sm font-bold hover:text-primary transition-colors px-3 py-2"
           >
             Student Login
